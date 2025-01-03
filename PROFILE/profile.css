@@ -1,0 +1,85 @@
+body{
+    box-sizing: border-box;
+    font-family: "Playwrite HR Lijeva", cursive;
+  }
+#navBer{
+    z-index: 1;
+    /* background-color: rgb(219, 219, 252); */
+}
+
+
+#reward{
+    font-weight: 900;
+    color: rgb(45, 45, 82);
+}
+.hey{
+    margin-left: 70px;
+}
+#hey2{
+    margin-left: -80px;
+}
+.prof{
+    display: none;
+    box-shadow: 3px 3px 10px black;
+    padding: none;
+    background-color: rgba(255, 228, 196, 0);
+}
+@media(max-width: 980px){
+    .prof{
+        display: block;
+    }
+}
+.prof1{
+    display: none;
+}
+@media(max-width: 980px){
+    .prof1{
+        display: block;
+    }
+}
+
+#dropmen{
+    margin-left: -45px;
+}
+#firstRoll{
+    flex-wrap: wrap;
+}
+
+#d-flex{
+    flex-wrap: wrap;
+}
+#cardi{
+    background-color: rgba(240, 255, 255, 0);
+}
+#cardi1{
+    background-color: rgba(240, 255, 255, 0);
+    font-family: 'Times New Roman', Times, serif;
+}
+#cardi2{
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+/* FOOTER */
+#foot{
+    display: none;
+}
+@media (max-width: 980px){
+    #foot{
+        display: block;
+    }
+}
+/* #footer{
+    background-color: rgb(134, 125, 125);
+} */
+
+#cardi3{
+    background-color: rgba(0, 0, 0, 0);
+    align-items: center;
+}
+
+.hshhs{
+    background-color: rgba(121, 120, 120, 0);
+}
+
+

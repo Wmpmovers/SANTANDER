@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="icon" href="../Images/faveLogo.png" type="image/icon type">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="dashboard2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="d-flex">
+    <div class="card fixed-top border-0" style="width: 15rem; height: 38rem;" id="firstCard">
+       <button class="btn bg-body-secondary p-2"><a class="nav-link" href="#">Logout</a></button>
+       <img src="../Images/Mobile-removebg-preview.png" style="width: 250px;" alt="">
+    </div>
+    <div class="card bg-body-secondary border-0" style="width: 100rem;" id="secondCard">
+        <div class="d-flex justify-content-between fixed-top bg-body-secondary" >
+            <img src="../Images/santanderlogo-removebg-preview.png" style="width: 200px;" alt="" id="logoFixed">
+        </div>
+        <div class="d-flex p-3 bg-body-tertiary rounded" id="well">
+        <img class="img-thumbnail" src="../Images/Angela.jpg" style="width: 100px; height: 130px;" alt="">
+        <div class="card p-3 border-0 ms-2 rounded" id="secondCard1">
+            <p>Welcome Back!</p>
+            <h5 class="fw-bold">Angela Kylie Shinkle</h5>
+            <p>Last Login: <span id="date"></span></p>
+        </div>
+       </div>
+
+       <!-- ACCOUNTS -->
+        <div class="d-flex justify-content-evenly mt-3">
+            <button class="btn bg-body-tertiary" onclick="saving()" id="savingss">Savings</button>
+            <button class="btn bg-body-tertiary" onclick="checking()" id="checkingss">Checking</button>
+            <button class="btn bg-body-tertiary" onclick="card()" id="cardss">Cards</button>
+        </div>
+        <div class="card border-0" id="cardi">
+      <div class="d-flex justify-content-center">
+         <!-- FIRST INNER -->
+        <div class="card border-0" id="innerCards">
+         <div class="card p-3 bg-danger bg-gradient border-5 text-white">
+             <div class="d-flex justify-content-between">
+                 <p>******24566 Savings Account</p>
+                 <span onclick="eyeA()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white"><path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z"/></svg></span>
+             </div>
+             <h5 id="money">$9,510,200</h5>
+             <div class="d-flex justify-content-evenly mt-3">
+              <!-- Button trigger modal for Transfer -->
+              <button type="button" class="btn bg-body-tertiary text-success border-0 shadow" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="green"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></svg> Transfer
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Bank Transfer</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="transfer-form">
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label"></label>
+                          <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Account Name" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label"></label>
+                          <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Account Number" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label"></label>
+                          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Bank Name" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label text-dark">Enter Amount</label>
+                          <input type="number" class="form-control" value="#" id="exampleInputPassword1" placeholder="$" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                          <div id="emailHelp" class="form-text">We'll never share your details with anyone else.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Transfer</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+     <!-- Button trigger modal Deposit -->
+<button type="button" class="btn bg-body-tertiary text-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="green"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg> Deposit
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-danger" id="staticBackdropLabel">Deposit</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="transfer-form">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label text-dark">Name of Account</label>
+            <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Angela Kylie Shinkle" required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label text-dark"> Account Number</label>
+            <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="0015422670" required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label text-dark"> Bank Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Santander Bank" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Deposit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+             </div>
+             <hr class="mt-3 shadow">
+         </div>
+         <div class="card p-3 border-0 bg-body-tertiary">
+             <div class="d-flex justify-content-between">
+                 <h4>Transanction History </h4>
+                 <a class=" text-danger me-4" href="../HISTORY/history.html"> View All</a>
+             </div>
+         </div>
+         <div class="card ">
+             <div class="card p-2 bg-dark-subtle border-0">
+                 <div class="d-flex justify-content-between bg-body-secondary p-1 rounded">
+                     <div class="card border-0" style="width: 30rem;" id="cardi3">
+                         <p>Benson Kylie</p>
+                         <div id="date1"> Sun August 12 2020 12:01am</div>
+                     </div>
+                     <div class="card border-0" style="width: 10rem;" id="cardi3">
+                         <p class="text-success mt-4">+ $59,000</p>
+                     </div>
+                 </div>
+                 <div class="d-flex justify-content-between mt-2 bg-body-secondary p-1 rounded">
+                     <div class="card border-0" style="width: 30rem;" id="cardi3">
+                         <p>Micheal Trimble</p>
+                         <div id="date2">Sat July 15 2020 08:21pm</div>
+                     </div>
+                     <div class="card border-0" style="width: 10rem;" id="cardi3">
+                         <p class="text-success mt-4">+ $1,100</p>
+                     </div>
+                 </div>
+                 <div class="d-flex justify-content-between mt-2 bg-body-secondary p-1 rounded">
+                     <div class="card  border-0" style="width: 30rem;" id="cardi3">
+                         <p>Leslie Capenter</p>
+                         <div id="date3"> Mon March 15 2020 07:42am</div>
+                     </div>
+                     <div class="card  border-0" style="width: 10rem;" id="cardi3">
+                         <p class="text-danger mt-4">- $47,010</p>
+                     </div>
+                 </div>
+                 <div class="d-flex justify-content-between mt-2 bg-body-secondary p-1 rounded">
+                     <div class="card border-0" style="width: 30rem;" id="cardi3">
+                         <p>Leslie Capenter</p>
+                         <div id="date4">Tue April 04 2020 08:56pm</div>
+                     </div>
+                     <div class="card  border-0" style="width: 10rem;" id="cardi3">
+                         <p class="text-danger mt-4">- $4,140</p>
+                     </div>
+                 </div>
+                 <div class="d-flex justify-content-between mt-2 bg-body-secondary p-1 rounded">
+                     <div class="card border-0" style="width: 30rem;" id="cardi3">
+                         <p>Micheal Trimble</p>
+                         <div id="date5"> Fri Dec 24 2019 09:pm</div>
+                     </div>
+                     <div class="card border-0" style="width: 10rem;" id="cardi3">
+                         <p class="text-success mt-4">+ $50,000</p>
+                     </div>
+                 </div>
+                 <div class="d-flex justify-content-between mt-2 bg-body-secondary p-1 rounded">
+                     <div class="card border-0" style="width: 30rem;" id="cardi3">
+                         <p>Hannah Bredt</p>
+                         <div id="date6">Sat Dec 15 2019 08:21am</div>
+                     </div>
+                     <div class="card border-0" style="width: 10rem;" id="cardi3">
+                         <p class="text-success mt-4">+ $12,200</p>
+                     </div>
+                 </div>
+                 <div class="d-flex justify-content-between mt-2 bg-body-secondary p-1 rounded">
+                     <div class="card border-0" style="width: 30rem;" id="cardi3">
+                         <p>Timothy Edge</p>
+                         <div id="date7">Mon Nov 13 2019 10:am</div>
+                     </div>
+                     <div class="card border-0" style="width: 10rem;" id="cardi3">
+                         <p class="text-success mt-4">+ $59,000</p>
+                     </div>
+                 </div>
+                 <div class="d-flex justify-content-between mt-2 bg-body-secondary p-1 rounded">
+                     <div class="card border-0" style="width: 30rem;" id="cardi3">
+                         <p>Micheal Trimble</p>
+                         <div id="date8">Sat August 23 2019 08:42pm</div>
+                     </div>
+                     <div class="card border-0" style="width: 10rem;" id="cardi3">
+                         <p class="text-danger mt-4">- $59,000</p>
+                     </div>
+                 </div>
+                 <div class="d-flex justify-content-between mt-2 bg-body-secondary p-1 rounded">
+                     <div class="card border-0" style="width: 30rem;" id="cardi3">
+                         <p>Gari Wills</p>
+                         <div id="date8">Sat July 15 2019 06:51am</div>
+                     </div>
+                     <div class="card border-0" style="width: 10rem;" id="cardi3">
+                         <p class="text-success mt-4">+ $59,000</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+   </div>
+      </div>
+
+     <div class="d-flex justify-content-center">
+      <!-- SECONS CARDD -->
+     <div class="card border-0" id="innerCards2">
+      <!-- SECOND INNER -->
+     <div class="card p-3 bg-primary bg-gradient border-5 text-white">
+         <div class="d-flex justify-content-between">
+             <p>******24566 Checking Account</p>
+             <span onclick="eyeB()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white"><path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z"/></svg></span>
+         </div>
+         <h5 id="moneyB">$600,200</h5>
+         <div class="d-flex justify-content-evenly mt-3">
+            <!-- Button trigger modal for Transfer -->
+            <button type="button" class="btn bg-body-tertiary text-success border-0 shadow" data-bs-toggle="modal" data-bs-target="#exampleModa">
+              <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="green"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></svg> Transfer
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Bank Transfer</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form id="transfer-form">
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label"></label>
+                        <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Account Name" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label"></label>
+                        <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Account Number" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label"></label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Bank Name" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label text-dark">Enter Amount</label>
+                        <input type="number" class="form-control" value="#" id="exampleInputPassword1" placeholder="$" required>
+                      </div>
+                      <div class="mb-3 form-check">
+                        <div id="emailHelp" class="form-text">We'll never share your details with anyone else.</div>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Transfer</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+             <!-- <button class="btn bg-body pt-1 ps-3 pe-3 pb-1 bg-body-tertiary shadow">Deposit</button> -->
+         </div>
+         <hr class="mt-3 shadow">
+     </div>
+     <div class="card p-3 bg-danger bg-gradient border-5 text-white mt-3">
+         <div class="d-flex justify-content-between">
+             <p>******24566 Business Checking Account</p>
+             <span onclick="eyeC()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white"><path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z"/></svg></span>
+         </div>
+         <h5 id="moneyC">$200,000</h5>
+         <div class="d-flex justify-content-evenly mt-3">
+             <!-- Button trigger modal for Transfer -->
+            <button type="button" class="btn bg-body-tertiary text-success border-0 shadow" data-bs-toggle="modal" data-bs-target="#exampleModa">
+              <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="green"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></svg> Transfer
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">Bank Transfer</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form id="transfer-form">
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label"></label>
+                        <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Account Name" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label"></label>
+                        <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Account Number" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label"></label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Bank Name" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label text-dark">Enter Amount</label>
+                        <input type="number" class="form-control" value="#" id="exampleInputPassword1" placeholder="$" required>
+                      </div>
+                      <div class="mb-3 form-check">
+                        <div id="emailHelp" class="form-text">We'll never share your details with anyone else.</div>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Transfer</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+             <!-- <button class="btn bg-bodypt-1 ps-3 pe-3 pb-1 bg-body-tertiary shadow">Deposit</button> -->
+         </div>
+         <hr class="mt-3 shadow">
+     </div>
+     <div class="card p-5 bg-info bg-gradient border-5 text-white mt-3">
+         <div class="d-flex justify-content-between">
+             <p>******24566 Credit Account</p>
+             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white"><path d="m644-428-58-58q9-47-27-88t-93-32l-58-58q17-8 34.5-12t37.5-4q75 0 127.5 52.5T660-500q0 20-4 37.5T644-428Zm128 126-58-56q38-29 67.5-63.5T832-500q-50-101-143.5-160.5T480-720q-29 0-57 4t-55 12l-62-62q41-17 84-25.5t90-8.5q151 0 269 83.5T920-500q-23 59-60.5 109.5T772-302Zm20 246L624-222q-35 11-70.5 16.5T480-200q-151 0-269-83.5T40-500q21-53 53-98.5t73-81.5L56-792l56-56 736 736-56 56ZM222-624q-29 26-53 57t-41 67q50 101 143.5 160.5T480-280q20 0 39-2.5t39-5.5l-36-38q-11 3-21 4.5t-21 1.5q-75 0-127.5-52.5T300-500q0-11 1.5-21t4.5-21l-84-82Zm319 93Zm-151 75Z"/></svg>
+         </div>
+         <h5 >Credit Score: 820</h5>
+     </div>
+    <!-- ANOTHER CONTENT HERE FOR SECOND CARD-->
+ </div>
+     </div>
+
+ <div class="d-flex justify-content-center">
+  <!-- THIRD CARDD -->
+ <div class="card border-0" id="innerCards3">
+  <!-- THIRD INNER -->
+  <div class="d-flex justify-content-evenly " id="d-flex">
+  <img class="img-fluid mt-3" src="../Images/Credit Card back.jpg" style="width: 400px;" alt="">
+  <img class="img-fluid rounded-4 mt-3" src="../Images/credit card front.jpg" style="width: 400px;" alt="">
+  </div>
+  <!-- <h4 class="see text-center fw-bold">See More...</h4> -->
+  <div class="card p-3 bg-primary bg-gradient border-0" id="third">
+    <div class="d-flex">
+      <h4 class="text-white">************* 4242</h4>
+      <h4 class="ms-5 text-white fw-bold">VISA</h4>
+    </div>
+  </div>
+  <div class="card p-3 bg-black bg-gradient border-0" id="third1">
+    <div class="d-flex">
+      <h4 class="text-white">************* 3235</h4>
+      <img class="ms-5" src="../Images/master-removebg-preview.png" style="width: 55px; height: 35px;" alt="">
+    </div>
+  </div>
+  <div class="card p-3 bg-danger bg-gradient border-0" id="third2">
+    <div class="d-flex">
+      <h4 class="text-white">************* 7647</h4>
+      <img class="ms-5" src="../Images/master-removebg-preview.png" style="width: 55px; height: 35px;" alt="">
+    </div>
+  </div>
+<!-- ANOTHER CONTENT HERE FOR THIRD CARD -->
+</div>
+ </div>
+</div>
+
+        </div>
+              <!-- FOOTER -->
+            <div class="card border-0" id="foot">
+                <div class="d-flex justify-content-evenly bg-body-secondary fixed-bottom p-2" id="footer">
+                    <div class="card border-0" id="cardi2">
+                        <a class="nav-link" href="../index.html"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="black"><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/></svg></a>
+                        <p class=" fw-bold">Logout</p>
+                    </div>
+                    <div class="card border-0" id="cardi2">
+                        <a class="nav-link" href="../PROFILE/profile.html"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="black"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg></a>
+                        <p class=" fw-bold">Profile</p>
+                    </div>
+                    <div class="card border-0" id="cardi2">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="black"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></svg>
+                        <p class=" fw-bold">Transfer</p>
+                    </div>
+                    <div class="card border-0" id="cardi2">
+                        <a class="nav-link" href="#innerCards3"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="black"><path d="M880-720v480q0 33-23.5 56.5T800-160H160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720Zm-720 80h640v-80H160v80Zm0 160v240h640v-240H160Zm0 240v-480 480Z"/></svg></a>
+                        <p class=" fw-bold">Cards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <script src="dashboard2.js"></script>
+</body>
+</html>

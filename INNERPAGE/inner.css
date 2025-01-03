@@ -1,0 +1,270 @@
+.bodi{
+    font-family: "Roboto", sans-serif;
+}
+#navBer{
+    z-index: 1;
+    /* background-color: rgb(219, 219, 252); */
+}
+#reward{
+    font-weight: 900;
+    color: rgb(45, 45, 82);
+}
+.hey{
+    margin-left: 70px;
+}
+#hey2{
+    margin-left: -80px;
+}
+.prof{
+    display: none;
+    box-shadow: 3px 3px 10px black;
+    padding: none;
+    background-color: rgba(255, 228, 196, 0);
+}
+@media(max-width: 470px){
+    .prof{
+        display: block;
+    }
+}
+.prof1{
+    display: none;
+}
+@media(max-width: 470px){
+    .prof1{
+        display: block;
+    }
+}
+
+#dropmen{
+    margin-left: -45px;
+}
+#firstRoll{
+    flex-wrap: wrap;
+}
+
+
+
+#firstCard{
+    z-index: 1;
+    top: 87px;
+    left: 0;
+    position: fixed;
+    width: 16rem;
+    height: 39rem;
+    /* box-shadow: 5px 5px 10px black; */
+}
+@media(max-width: 470px){
+    #firstCard{
+        display: none;
+    }
+}
+
+/********CURSOR FOR AMOUNT */
+#moneyA{
+    cursor: pointer;
+}
+#money{
+    cursor: pointer;
+}
+#moneyB{
+    cursor: pointer;
+}
+#moneyC{
+    cursor: pointer;
+}
+
+
+
+.fontt{
+    font-size: 15px;
+    font-weight: bold;
+}
+#recent{
+    z-index: 1;
+    width: 42rem;
+    height: 12rem;
+}
+@media(max-width: 470px){
+    #recent{
+        display: none;
+    }
+}
+#recent h4{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.eye{
+    float: right;
+}
+@media(max-width: 470px){
+    .eye{
+        float: right;
+    }
+}
+#secondCard{
+    width: 68rem;
+    height: 39rem;
+    margin-left: 275px;
+    margin-top: 60px;
+}
+@media(max-width: 470px){
+    #secondCard{
+        margin-left: 0px;
+    }
+    #secondCardinn{
+        margin-left: 15px;
+    }
+}
+#secondCardinn h4{
+    margin-top: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+#secondCardinn li{
+    line-height: 30px;
+}
+
+#firstrollCard{
+   width: 20rem; 
+}
+@media(max-width: 470px){
+    #firstrollCard{
+        width: 30rem; 
+     }
+}
+
+#secondrollCard{
+    width: 20rem;
+}
+@media(max-width: 470px){
+    #secondrollCard{
+        width: 30rem;
+    }
+}
+#checking {
+    /* width: 20rem;
+    height: 10rem; */
+    box-shadow: 3px 3px 7px black;
+}
+#transf{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+#checking h4{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+#savings{
+    /* width: 20rem;
+    height: 10rem; */
+    box-shadow: 3px 3px 7px black;
+}
+#savings h4{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+#depo{
+    align-items: center;
+    width: 10rem;
+    box-shadow: 3px 3px 7px black;
+}
+@media(max-width: 470px){
+    #depo{
+        width: 15rem;
+    }
+}
+#depo h5{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+#transf{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+#transf i{
+    font-size: 25px;
+}
+
+/***********THIRD-ROLL */
+
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    width: 300px;
+    height: 200px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  
+  /* Style the back side */
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+
+#third:hover{
+    box-shadow: 3px 3px 7px black;
+    transition: .7s;
+}
+#third{
+    margin-top: 20px;
+}
+#third h4{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.see{
+    margin-top: 70px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#last{
+    background-color: rgba(240, 255, 255, 0.123);
+    box-shadow: 3px 3px 7px black;
+}
+
+#bott{
+    background-color: rgb(255, 255, 255);
+    margin-top: 100px;
+    display: none;
+}
+#bottom{
+    display: none;
+    background-color: rgba(255, 255, 255, 0.692);
+}
+@media (max-width: 470px){
+    #bott{
+    display: block;
+}
+}
+#cardBot{
+    align-items: center;
+    border: none;
+    background-color: rgba(245, 245, 220, 0);
+}
+
+
+.more{
+    align-items: center;
+}
